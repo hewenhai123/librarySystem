@@ -8,10 +8,17 @@ var mongoDB='mongodb://127.0.0.1:27017/my_database';
 mongoose.connect(mongoDB);
 mongoose.Promise=global.Promise;
 var db=mongoose.connection;
+var Schema=mongoose.Schema;
 db.on('error',console.error.bind(console,'MongoDB connection error :'));
 db.on('connected',()=>{
   console.log("MongoDB connected Success: "+mongoDB)
-})
+
+});
+
+
+
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
