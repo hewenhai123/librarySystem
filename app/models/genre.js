@@ -16,13 +16,11 @@ const GenreSchema = new Schema({
         enum: ['小说', '纪事', '军事', '爱情','奇幻','科幻','诗歌','历史','伦理'],
         default: '小说'
     }
-
-})
+});
 
 GenreSchema.virtual("url").get(function(){
     return '/catalog/genre/'+this._id
-
-})
+});
 
 module.exports=mongoose.model('genre',GenreSchema);
 

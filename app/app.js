@@ -22,6 +22,7 @@ db.on('connected',()=>{
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var wikiRouter=require('./wiki.js');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/wiki',wikiRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
