@@ -6,7 +6,7 @@ exports.index = function(req, res) {
 
 // Display list of all books.
 exports.book_list = function(req, res) {
-    res.send('NOT IMPLEMENTED: Book list');
+    res.send('NOT IMPLEMENTED: Book list 藏书列表');
 };
 
 // Display detail page for a specific book.
