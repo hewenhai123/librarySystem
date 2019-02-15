@@ -1,0 +1,22 @@
+<% include header.ejs%>
+
+<h1>
+    <%= title%>
+</h1>
+<ul>
+    <% booinstance_list.forEach(function (val) {%>
+      <li>
+          <a href="<%=val.url%>"><%=val.book.title%> : <%=val.imprint%> </a>-
+              <%if(val.status=="Available"){%>
+              <!-- 可借出-->
+              <span class="text-success"><%=val.status%></span>
+              <%}else if (val.status=="maintenance"){%>
+              <!-- 维护中-->
+              <span class="text-danger"><%=val.status%></span>
+              <%}else if(val.status !=="Available"){%>
+              <span class="text-warning"><%=val.status %></span> - <span class=""><%=val.due_back_formartted%></span>
+              <%}%>
+      </li>
+    <%})%>
+</ul>
+<% include footer.ejs%>

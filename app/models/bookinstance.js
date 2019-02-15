@@ -14,6 +14,7 @@
 
 const  mongoose=require("mongoose");
 const  Schema=mongoose.Schema;
+const moment=require("moment");
 
 
 /*
@@ -28,11 +29,13 @@ const BookInstanceSchema=new Schema({
     status:{
         type:String,
         required:true,
-        enum:['可供借阅','馆藏维护','已借出','保留'],
-        default:'馆藏维护'
+        // enum:['可供借阅','馆藏维护','已借出','保留'],
+        enum:['Available','maintenance','lent','Reserved'],
+        default:'maintenance'
     },
     due_back:{type:Date,default:Date.now}
 });
+
 
 /*
 *
@@ -41,6 +44,14 @@ const BookInstanceSchema=new Schema({
 BookInstanceSchema.virtual("url").get(function(){
     return '/catalog/bookinstance/'+this._id;
 });
+
+/*
+*  格式化时间属性
+* */
+BookInstanceSchema.virtual('due_back_formartted')
+    .get(()=>{
+      return moment(this.due_back).format('MMMM Do, YYYY');
+    });
 
 //导出
 module.exports=mongoose.model("BookInstance",BookInstanceSchema);
