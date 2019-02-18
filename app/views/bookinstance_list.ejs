@@ -1,8 +1,5 @@
 <% include header.ejs%>
-
-<h1>
-    <%= title%>
-</h1>
+<h1><%= title%></h1>
 <ul>
     <% booinstance_list.forEach(function (val) {%>
       <li>
@@ -10,7 +7,7 @@
               <%if(val.status=="Available"){%>
               <!-- 可借出-->
               <span class="text-success"><%=val.status%></span>
-              <%}else if (val.status=="maintenance"){%>
+              <%}else if (val.status=="Maintenance"){%>
               <!-- 维护中-->
               <span class="text-danger"><%=val.status%></span>
               <%}else if(val.status !=="Available"){%>

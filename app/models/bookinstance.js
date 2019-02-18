@@ -30,8 +30,8 @@ const BookInstanceSchema=new Schema({
         type:String,
         required:true,
         // enum:['可供借阅','馆藏维护','已借出','保留'],
-        enum:['Available','maintenance','lent','Reserved'],
-        default:'maintenance'
+        enum:['Available','Maintenance','lent','Reserved'],
+        default:'Maintenance'
     },
     due_back:{type:Date,default:Date.now}
 });

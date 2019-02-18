@@ -1,0 +1,59 @@
+<% include header.ejs %>
+
+<h1>
+    title: <%= book.title %>
+</h1>
+
+<p>
+    <strong>Author:</strong>
+    <a href="<%= book.author.url %>"><%= book.author.name %></a>
+
+</p>
+<p>
+    <strong>Summary:</strong>
+    <%= book.summary %>
+</p>
+<p>
+    <strong> ISBN:</strong>
+    <%= book.isbn %>
+</p>
+<p>
+    <strong>Genre:</strong>&nbsp;
+    <% book.genre.forEach( function(item){ %>
+    <a href="<%= item.url %>"><%= item.name %></a>
+    <% }) %>
+
+</p>
+<div style="margin-left: 20px;margin-top: 20px">
+    <h4>Copies</h4>
+    <% book_instances.forEach(function(item){ %>
+    <hr>
+    <% if(item.status == 'Available'){ %>
+    <p class="text-success"> <%= item.status %></p>
+    <% }else if(item.status == 'Maintenance'){ %>
+    <p class="text-danger"><%= item.status %></p>
+    <% }else { %>
+    <p class="text-warning"><%= item.status %></p>
+    <% } %>
+    <p>
+        <strong>Imprint:</strong>
+        <%= item.imprint %>
+    </p>
+    <% if(item.status !== 'Available'){ %>
+    <p>
+        <strong>Due back:</strong>
+        <%= item.due_back %>
+    </p>
+    <% } %>
+
+    <p>
+        <strong> ID:</strong>
+        <a href="<%= item.url %>"><%= item._id %></a>
+    </p>
+
+    <% }) %>
+
+</div>
+
+
+<% include footer.ejs %>

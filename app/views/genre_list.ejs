@@ -1,0 +1,18 @@
+<% include header.ejs%>
+<h1>
+    <%= title%>
+</h1>
+
+<ul>
+    <% list_genre.forEach(function(item){%>
+           <li>
+               <a href="<%=item.url%>"><%=item.name%></a>
+           </li>
+    <%})%>
+
+</ul>
+
+
+
+
+<% include footer.ejs%>
