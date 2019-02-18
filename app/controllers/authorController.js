@@ -1,5 +1,6 @@
 const Author =require('../models/author');
-const async=require('async ')
+const Book=require('../models/book');
+const async=require('async');
 //显示作者列表
 exports.author_list = (req, res, next) => {
     Author.find()
@@ -16,14 +17,23 @@ exports.author_list = (req, res, next) => {
 //为每位作者显示详细信息页面
 exports.author_detail=(req,res)=>{
        async.parallel({
+           author:(callback)=>{
+               Author.findById(req.params.id)
+                   .exec(callback)
+           },
+           authors_books:(callbacck)=>{
+                  Book.find({"author":req.params.id},'title summary')
+                      .exec(callbacck)
+           }
+       },(err,results)=>{
 
-
+           res.send({results:results})
        });
 
 
-    res.send(
-
-    "为实现：作者详细信息"+req.params.id)
+    // res.send(
+    //
+    // "为实现：作者详细信息"+req.params.id)
 
 };
 
