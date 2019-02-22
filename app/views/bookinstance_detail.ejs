@@ -1,0 +1,49 @@
+<% include header.ejs%>
+
+
+<h1>
+    ID:<%=bookinstance._id%>
+</h1>
+<p>
+    <strong>Title:</strong>
+    <a href="<%=bookinstance.book.url%>">bookinstance.book.title</a>
+</p>
+<p>
+    <strong>Imprint:</strong> <%=bookinstance.imprint%>
+</p>
+<p>
+    <strong>Status:</strong>
+    <% if(bookinstance.status=="Available"){%>
+    <span class="text-success"><%=bookinstance.status%></span>
+    <%}else if(bookinstance.status=="Maintenance"){%>
+       <span class="text-danger"><%=bookinstance.status%></span>
+    <%}else{%>
+       <span class="text-warning"><%=bookinstance.status%></span>
+    <%}%>
+
+    <%if(bookinstance.status!=="Available"){%>
+        <p>
+    <strong>Due book:</strong>
+    <%=bookinstance.due_back%>
+</p>
+    <%}%>
+</p>
+
+
+
+<% include footer.ejs%>
+<script type="text/javascript">
+//   var a= /\{(\d+)\}/g;
+    var reg=/\{(\w+)\}/g;
+//    var content=obj["content"];
+//    console.log(reg.test(content));
+//var str="{len1}{len2}"
+var str="<p>e11111wq<p>22222</p>11111</p><p>22222</p><p>3333</p><p>4444<p>5555{len6}5555</p>4444</p>"
+console.log(reg.test(str));
+    console.log(str.match(reg))
+    var msg=str.replace(reg,function (target,inner) {
+        console.log(target,inner)
+    })
+
+
+</script>

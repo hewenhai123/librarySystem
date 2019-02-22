@@ -1,8 +1,10 @@
 const Author =require('../models/author');
 const Book=require('../models/book');
 const async=require('async');
+const mongoose=require('mongoose');
 //显示作者列表
 exports.author_list = (req, res, next) => {
+
     Author.find()
         .sort([['family_name', 'ascending']])
         .exec((err, list_authors) => {
@@ -15,19 +17,25 @@ exports.author_list = (req, res, next) => {
 };
 
 //为每位作者显示详细信息页面
-exports.author_detail=(req,res)=>{
+exports.author_detail=(req,res,next)=>{
+    let id=mongoose.Types.ObjectId(req.params.id);
        async.parallel({
            author:(callback)=>{
                Author.findById(req.params.id)
                    .exec(callback)
            },
-           authors_books:(callbacck)=>{
-                  Book.find({"author":req.params.id},'title summary')
+           author_books:(callbacck)=>{
+                  Book.find({"author":req.params.id})
                       .exec(callbacck)
            }
        },(err,results)=>{
+           if(err){
+               return next(err);
+           }
+   // res.send({"author":results.author,"author_books":results.author_books})
+         res.render("author_detail",{"title":"author","author":results.author,"author_books":results.author_books});
 
-           res.send({results:results})
+
        });
 
 
