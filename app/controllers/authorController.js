@@ -46,7 +46,9 @@ exports.author_detail=(req,res,next)=>{
 };
 
 // 由GET 显示创建作者的表单
-exports.author_create_get=(req,res)=>{res.send("未实现：作者创建表单的GET")};
+exports.author_create_get=(req,res)=>{
+    res.send("未实现：作者创建表单的GET")
+};
 
 // 由 POST 处理作者创建操作
 exports.author_create_post=(req,res)=>{res.send("未实现：创操作者POST")};

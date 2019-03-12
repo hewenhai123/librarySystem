@@ -63,10 +63,32 @@ exports.genre_create_post = [
         const errors = validationResult(req);
         var genre = new Genre({name: req.body.name});
         if (!errors.isEmpty()) {
-            console.log(errors.array());
             res.render('genre_form', {title: '添加新分类', genre: genre, errors: errors.array()});
             // res.send({title:'添加新分类',genre:genre,errors:errors.array()});
             return;
+        } else {
+            /*
+            * 通过上面验证后，在genre集合中进行查找，如果找到，则直接跳转到已存在分类详情页，
+            * 如果没有找到，则认为是新分类，需要保存到数据库。
+            * */
+            Genre.findOne({'name': req.body.name}).exec(
+                (err, found_genre) => {
+                    if (err) {
+                        return next(err)
+                    }
+                    if (found_genre) {
+                        res.redirect(found_genre.url);
+                    } else {
+                        genre.save(function (err) {
+                            if (err) {
+                                res.render('genre_form', {title: '添加新分类',genre: genre, errors:[{param:"name",msg:"没有这个分类"}]});
+                                return
+                            }
+                            res.render('genre_form', {title: '添加新分类',genre: genre, errors:[{param:"name",msg:"添加成功"}]});
+                            // res.redirect(genre.url);
+                        })
+                    }
+                });
         }
         // res.send({"console":errors.isEmpty()});
     }

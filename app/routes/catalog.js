@@ -17,6 +17,7 @@ const book_instance_controller=require('../controllers/bookinstanceController');
 router.get('/',book_controller.index);
 // get请求添加新的藏书。注意此项必须位于显示藏书的路由之前
 
+
 router.get('/book/create',book_controller.book_create_get);
 
 //POST 请求添加新的藏书
