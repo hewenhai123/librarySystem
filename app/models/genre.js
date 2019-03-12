@@ -6,8 +6,6 @@
 
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-
 const GenreSchema = new Schema({
     // book: {type: Schema.Types.ObjectId, ref: 'Book', required: true, min: 3, max: 100},
     name: {

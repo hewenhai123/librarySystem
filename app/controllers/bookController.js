@@ -52,7 +52,6 @@ exports.book_detail = function (req, res,next) {
                // })
                .populate("genre")
                 .exec(callback);
-
         },
         book_instance: function(callback) {
             BookInstance.find({ 'book': req.params.id })
