@@ -1,0 +1,37 @@
+{ 
+    "_id" : ObjectId("5c5004c6a2f30a2d8454759f"), 
+    "first_name" : "迁", 
+    "family_name" : "司马", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c5004c6a2f30a2d845475a1"), 
+    "first_name" : "迅", 
+    "family_name" : "鲁", 
+    "date_of_birth" : ISODate("1881-09-24T15:54:17.000+0000"), 
+    "date_of_death" : ISODate("1936-10-19T00:00:00.000+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c5004c6a2f30a2d845475a3"), 
+    "first_name" : "Isaac", 
+    "family_name" : "Asimov", 
+    "date_of_birth" : ISODate("1920-01-02T00:00:00.000+0000"), 
+    "date_of_death" : ISODate("1992-04-06T00:00:00.000+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c5004c6a2f30a2d845475a2"), 
+    "first_name" : "言", 
+    "family_name" : "莫", 
+    "date_of_birth" : ISODate("1955-02-16T16:00:00.000+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c5004c6a2f30a2d845475a0"), 
+    "first_name" : "笑笑生", 
+    "family_name" : "兰陵", 
+    "__v" : NumberInt(0), 
+    "date_of_birth" : ISODate("1905-01-16T16:00:00.000+0000"), 
+    "date_of_death" : ISODate("1992-08-06T00:00:00.000+0000")
+}
