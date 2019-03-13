@@ -11,7 +11,6 @@ const author_controller=require('../controllers/authorController');
 const genre_controller=require('../controllers/genreController');
 const book_instance_controller=require('../controllers/bookinstanceController');
 
-
 // book routers
 // 藏书主页
 router.get('/',book_controller.index);
