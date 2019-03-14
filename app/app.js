@@ -12,7 +12,6 @@ var Schema=mongoose.Schema;
 db.on('error',console.error.bind(console,'MongoDB connection error :'));
 db.on('connected',()=>{
   console.log("MongoDB connected Success: "+mongoDB)
-
 });
 
 
