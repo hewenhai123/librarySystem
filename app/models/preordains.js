@@ -1,0 +1,1 @@
+const mongoose = require('mongoose');const Schema = mongoose.Schema;const UserSchema = new Schema({    tyname: {type: String},});module.exports = mongoose.model('preordains', UserSchema);

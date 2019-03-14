@@ -1,0 +1,1 @@
+const mongoose = require('mongoose');const Schema = mongoose.Schema;const tScchema = new Schema({    ctname: {type: String},});module.exports = mongoose.model('hcountys', tScchema);

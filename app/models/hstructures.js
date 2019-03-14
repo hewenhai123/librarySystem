@@ -1,0 +1,1 @@
+const mongoose = require('mongoose');const Schema = mongoose.Schema;const hsScchema = new Schema({    stname: {type: String},});module.exports=mongoose.model("Hstructures",hsScchema);
