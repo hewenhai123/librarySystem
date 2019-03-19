@@ -1,6 +1,8 @@
 /**
  * Created by Administrator on 2019/1/29 0029.
  */
+const fs=require('fs');
+const path=require('path');
 
 
 console.log('此脚本为数据库填充一些测试藏书、作者、藏书种类、藏书类型。将数据库地址作为参数，比如：populatedb mongodb://your_username:your_password@your_dabase_url。');
@@ -205,10 +207,10 @@ function createBookInstances(cb) {
 
 async.series (
     [
-        createGenres,
+        // createGenres,
         createAuthors,
-        createBooks,
-        createBookInstances
+        // createBooks,
+        // createBookInstances
     ],
     // 可选回调
     (err, results) => {
@@ -218,6 +220,14 @@ async.series (
                 '藏书副本：' + bookInstances
         );
         // 操作完成，断开数据库连接
+        // console.log(authors,genres,books,bookInstances);
+        console.log(authors);
+        fs.writeFile("./test.json",authors,function(err){
+           if(err){
+               console.log("写入错误")
+               console.log(err)
+           }
+        })
         db.close();
     }
 );
