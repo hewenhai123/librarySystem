@@ -1,0 +1,50 @@
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4000"), 
+    "floor" : "3", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3fff"), 
+    "floor" : "2", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ffe"), 
+    "floor" : "1", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4001"), 
+    "floor" : "4", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4002"), 
+    "floor" : "5", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4007"), 
+    "floor" : "10", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4006"), 
+    "floor" : "9", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4005"), 
+    "floor" : "8", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4004"), 
+    "floor" : "7", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4003"), 
+    "floor" : "6", 
+    "__v" : NumberInt(0)
+}

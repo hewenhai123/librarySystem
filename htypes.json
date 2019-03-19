@@ -1,0 +1,25 @@
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ff9"), 
+    "typeName" : "一室", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ffc"), 
+    "typeName" : "四室", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ffb"), 
+    "typeName" : "三室", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ffa"), 
+    "typeName" : "两室", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d3ffd"), 
+    "typeName" : "五室", 
+    "__v" : NumberInt(0)
+}

@@ -1,0 +1,15 @@
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d400a"), 
+    "decoration" : "模胚房", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4009"), 
+    "decoration" : "普通装修", 
+    "__v" : NumberInt(0)
+},
+{ 
+    "_id" : ObjectId("5c90cbfffc0a7639785d4008"), 
+    "decoration" : "精装修", 
+    "__v" : NumberInt(0)
+}
