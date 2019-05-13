@@ -14,4 +14,7 @@ router.post('/login',user_controller.login_post);
 router.get('/register',user_controller.get_register);
 router.post('/register',user_controller.post_register);
 router.get('/search',user_controller.get_search);
+router.get('/wxTest',function(req,res){
+   res.send({name:"21312"})
+});
 module.exports = router;
